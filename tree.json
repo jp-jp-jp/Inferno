@@ -1,0 +1,1348 @@
+[
+	{
+		"isOnline": true,
+		"identifier": "Inferno",
+		"children": [
+			{
+				"number": 0,
+				"isOnline": true,
+				"identifier": "0",
+				"ip": "0",
+				"rawgain": "0",
+				"children": [
+					{
+						"number": 0,
+						"isOnline": true,
+						"identifier": "Mic Status",
+						"children": [
+							{
+								"identifier": "peak",
+								"value": 0,
+								"access": "read",
+								"type": "integer",
+								"streamIdentifier": 0
+							},
+							{
+								"identifier": "gain",
+								"value": 0,
+								"access": "readWrite",
+								"type": "integer",
+								"minimum": -35,
+								"maximum": 15
+							},
+							{
+								"identifier": "onair",
+								"value": false,
+								"access": "readWrite",
+								"type": "boolean"
+							},
+							{
+								"identifier": "micline",
+								"value": 0,
+								"access": "readWrite",
+								"type":"enum",
+								"enumeration": "Line\nMic+48V\nMic"
+							},
+							{
+								"identifier": "mllock",
+								"value": false,
+								"access": "readWrite",
+								"type": "boolean"
+							},
+							{
+								"identifier": "gainlock",
+								"value": false,
+								"access": "readWrite",
+								"type": "boolean"
+							},
+							{
+								"identifier": "sidetone",
+								"value": false,
+								"access": "readWrite",
+								"type": "boolean"
+							}
+						]
+					},
+					{
+						"number": 1,
+						"isOnline": true,
+						"identifier": "Network Status",
+						"children": [
+							{
+								"identifier": "ipaddr",
+								"value": "0",
+								"access": "read",
+								"type": "string"
+							},
+							{
+								"identifier": "custdns",
+								"value": "0",
+								"access": "readWrite",
+								"type": "string"
+							},
+							{
+								"identifier": "macaddr",
+								"value": "0",
+								"access": "read",
+								"type": "string"
+							},
+							{
+								"identifier": "submask",
+								"value": "0",
+								"access": "readWrite",
+								"type": "string"
+							},
+							{
+								"identifier": "gwaddr",
+								"value": "0",
+								"access": "readWrite",
+								"type": "string"
+							},
+							{
+								"identifier": "serial",
+								"value": "0",
+								"access": "read",
+								"type": "string"
+							},
+							{
+								"identifier": "dhcp",
+								"value": false,
+								"access": "read",
+								"type": "boolean"
+							}
+						]
+					},
+					{
+						"number": 2,
+						"isOnline": true,
+						"identifier": "Channel Operation",
+						"children": [
+							{
+								"number": 0,
+								"isOnline": true,
+								"identifier": "Channel 1",
+								"children": [
+									{
+										"identifier": "Talk Mode",
+										"value": "0",
+										"access": "readWrite",
+										"type":"enum",
+										"enumeration": "OFF\nMOM\nLATCH\nMOM\\LATCH\nCOUGH"
+									},
+									{
+										"identifier": "L-B-R",
+										"value": "0",
+										"access": "readWrite",
+										"type":"enum",
+										"enumeration": "BOTH\nLEFT\nRIGHT"
+									},
+									{
+										"identifier": "L-B-R locked",
+										"value": "0",
+										"access": "readWrite",
+										"type":"enum",
+										"enumeration": "NO\nYES"
+									},
+									{
+										"identifier": "Headphones Fully Off",
+										"value": "0",
+										"access": "readWrite",
+										"type":"enum",
+										"enumeration": "NO\nYES"
+									}
+								]
+							},
+							{
+								"number": 1,
+								"isOnline": true,
+								"identifier": "Channel 2",
+								"children": [
+									{
+										"identifier": "Talk Mode",
+										"value": "0",
+										"access": "readWrite",
+										"type":"enum",
+										"enumeration": "OFF\nMOM\nLATCH\nMOM\\LATCH\nCOUGH"
+									},
+									{
+										"identifier": "L-B-R",
+										"value": "0",
+										"access": "readWrite",
+										"type":"enum",
+										"enumeration": "BOTH\nLEFT\nRIGHT"
+									},
+									{
+										"identifier": "L-B-R locked",
+										"value": "0",
+										"access": "readWrite",
+										"type":"enum",
+										"enumeration": "NO\nYES"
+									},
+									{
+										"identifier": "Headphones Fully Off",
+										"value": "0",
+										"access": "readWrite",
+										"type":"enum",
+										"enumeration": "NO\nYES"
+									}
+								]
+							},
+							{
+								"number": 2,
+								"isOnline": true,
+								"identifier": "Channel 3",
+								"children": [
+									{
+										"identifier": "Talk Mode",
+										"value": "0",
+										"access": "readWrite",
+										"type":"enum",
+										"enumeration": "OFF\nMOM\nLATCH\nMOM\\LATCH\nCOUGH"
+									},
+									{
+										"identifier": "L-B-R",
+										"value": "0",
+										"access": "readWrite",
+										"type":"enum",
+										"enumeration": "BOTH\nLEFT\nRIGHT"
+									},
+									{
+										"identifier": "L-B-R locked",
+										"value": "0",
+										"access": "readWrite",
+										"enumeration": "NO\nYES"
+									},
+									{
+										"identifier": "Headphones Fully Off",
+										"value": "0",
+										"access": "readWrite",
+										"type":"enum",
+										"enumeration": "NO\nYES"
+									}
+								]
+							},
+							{
+								"number": 3,
+								"isOnline": true,
+								"identifier": "Channel 4",
+								"children": [
+									{
+										"identifier": "Talk Mode",
+										"value": "0",
+										"access": "readWrite",
+										"type":"enum",
+										"enumeration": "OFF\nMOM\nLATCH\nMOM\\LATCH\nCOUGH"
+									},
+									{
+										"identifier": "L-B-R",
+										"value": "0",
+										"access": "readWrite",
+										"type":"enum",
+										"enumeration": "BOTH\nLEFT\nRIGHT"
+									},
+									{
+										"identifier": "L-B-R locked",
+										"value": "0",
+										"access": "readWrite",
+										"type":"enum",
+										"enumeration": "NO\nYES"
+									},
+									{
+										"identifier": "Headphones Fully Off",
+										"value": "0",
+										"access": "readWrite",
+										"type":"enum",
+										"enumeration": "NO\nYES"
+									}
+								]
+							},
+							{
+								"number": 4,
+								"isOnline": true,
+								"identifier": "Channel 5",
+								"children": [
+									{
+										"identifier": "Talk Mode",
+										"value": "0",
+										"access": "readWrite",
+										"type":"enum",
+										"enumeration": "OFF\nMOM\nLATCH\nMOM\\LATCH\nCOUGH"
+									},
+									{
+										"identifier": "L-B-R",
+										"value": "0",
+										"access": "readWrite",
+										"type":"enum",
+										"enumeration": "BOTH\nLEFT\nRIGHT"
+									},
+									{
+										"identifier": "L-B-R locked",
+										"value": "0",
+										"access": "readWrite",
+										"type":"enum",
+										"enumeration": "NO\nYES"
+									},
+									{
+										"identifier": "Headphones Fully Off",
+										"value": "0",
+										"access": "readWrite",
+										"type":"enum",
+										"enumeration": "NO\nYES"
+									}
+								]
+							},
+							{
+								"number": 5,
+								"isOnline": true,
+								"identifier": "Channel 6",
+								"children": [
+									{
+										"identifier": "Talk Mode",
+										"value": "0",
+										"access": "readWrite",
+										"type":"enum",
+										"enumeration": "OFF\nMOM\nLATCH\nMOM\\LATCH\nCOUGH"
+									},
+									{
+										"identifier": "L-B-R",
+										"value": "0",
+										"access": "readWrite",
+										"type":"enum",
+										"enumeration": "BOTH\nLEFT\nRIGHT"
+									},
+									{
+										"identifier": "L-B-R locked",
+										"value": "0",
+										"access": "readWrite",
+										"type":"enum",
+										"enumeration": "NO\nYES"
+									},
+									{
+										"identifier": "Headphones Fully Off",
+										"value": "0",
+										"access": "readWrite",
+										"type":"enum",
+										"enumeration": "NO\nYES"
+									}
+								]
+							},
+							{
+								"number": 6,
+								"isOnline": true,
+								"identifier": "Channel 7",
+								"children": [
+									{
+										"identifier": "Talk Mode",
+										"value": "0",
+										"access": "readWrite",
+										"type":"enum",
+										"enumeration": "OFF\nMOM\nLATCH\nMOM\\LATCH\nCOUGH"
+									},
+									{
+										"identifier": "L-B-R",
+										"value": "0",
+										"access": "readWrite",
+										"type":"enum",
+										"enumeration": "BOTH\nLEFT\nRIGHT"
+									},
+									{
+										"identifier": "L-B-R locked",
+										"value": "0",
+										"access": "readWrite",
+										"type":"enum",
+										"enumeration": "NO\nYES"
+									},
+									{
+										"identifier": "Headphones Fully Off",
+										"value": "0",
+										"access": "readWrite",
+										"type":"enum",
+										"enumeration": "NO\nYES"
+									}
+								]
+							},
+							{
+								"number": 7,
+								"isOnline": true,
+								"identifier": "On Air",
+								"children": [
+									{
+										"identifier": "Talk Mode",
+										"value": "0",
+										"access": "readWrite",
+										"type":"enum",
+										"enumeration": "OFF\nMOM\nLATCH\nMOM\\LATCH\nCOUGH"
+									},
+									{
+										"identifier": "L-B-R",
+										"value": "0",
+										"access": "readWrite",
+										"type":"enum",
+										"enumeration": "BOTH\nLEFT\nRIGHT"
+									},
+									{
+										"identifier": "L-B-R locked",
+										"value": "0",
+										"access": "readWrite",
+										"type":"enum",
+										"enumeration": "NO\nYES"
+									},
+									{
+										"identifier": "Headphones Fully Off",
+										"value": "0",
+										"access": "readWrite",
+										"type":"enum",
+										"enumeration": "NO\nYES"
+									}
+								]
+							}
+						]
+					},
+					{
+						"number": 3,
+						"isOnline": true,
+						"identifier": "Channel Effect",
+						"children": [
+							{
+								"number": 0,
+								"isOnline": true,
+								"identifier": "Channel 1",
+								"children": [
+									{
+										"number": 0,
+										"isOnline": true,
+										"identifier": "Surpresses",
+										"children": [
+											{
+												"identifier": "Channel 1",
+												"value": false,
+												"access": "none",
+												"type": "boolean"
+											},
+											{
+												"identifier": "Channel 2",
+												"value": false,
+												"access": "readWrite",
+												"type": "boolean"
+											},
+											{
+												"identifier": "Channel 3",
+												"value": false,
+												"access": "readWrite",
+												"type": "boolean"
+											},
+											{
+												"identifier": "Channel 4",
+												"value": false,
+												"access": "readWrite",
+												"type": "boolean"
+											},
+											{
+												"identifier": "Channel 5",
+												"value": false,
+												"access": "readWrite",
+												"type": "boolean"
+											},
+											{
+												"identifier": "Channel 6",
+												"value": false,
+												"access": "readWrite",
+												"type": "boolean"
+											},
+											{
+												"identifier": "Channel 7",
+												"value": false,
+												"access": "readWrite",
+												"type": "boolean"
+											},
+											{
+												"identifier": "On Air",
+												"value": false,
+												"access": "readWrite",
+												"type": "boolean"
+											}
+										]
+									},
+									{
+										"number": 1,
+										"isOnline": true,
+										"identifier": "Delatches",
+										"children": [
+											{
+												"identifier": "Channel 1",
+												"value": false,
+												"access": "none",
+												"type": "boolean"
+											},
+											{
+												"identifier": "Channel 2",
+												"value": false,
+												"access": "readWrite",
+												"type": "boolean"
+											},
+											{
+												"identifier": "Channel 3",
+												"value": false,
+												"access": "readWrite",
+												"type": "boolean"
+											},
+											{
+												"identifier": "Channel 4",
+												"value": false,
+												"access": "readWrite",
+												"type": "boolean"
+											},
+											{
+												"identifier": "Channel 5",
+												"value": false,
+												"access": "readWrite",
+												"type": "boolean"
+											},
+											{
+												"identifier": "Channel 6",
+												"value": false,
+												"access": "readWrite",
+												"type": "boolean"
+											},
+											{
+												"identifier": "Channel 7",
+												"value": false,
+												"access": "readWrite",
+												"type": "boolean"
+											},
+											{
+												"identifier": "On Air",
+												"value": false,
+												"access": "readWrite",
+												"type": "boolean"
+											}
+										]
+									}
+								]
+							},
+							{
+								"number": 1,
+								"isOnline": true,
+								"identifier": "Channel 2",
+								"children": [
+									{
+										"number": 0,
+										"isOnline": true,
+										"identifier": "Surpresses",
+										"children": [
+											{
+												"identifier": "Channel 1",
+												"value": false,
+												"access": "readWrite",
+												"type": "boolean"
+											},
+											{
+												"identifier": "Channel 2",
+												"value": false,
+												"access": "none",
+												"type": "boolean"
+											},
+											{
+												"identifier": "Channel 3",
+												"value": false,
+												"access": "readWrite",
+												"type": "boolean"
+											},
+											{
+												"identifier": "Channel 4",
+												"value": false,
+												"access": "readWrite",
+												"type": "boolean"
+											},
+											{
+												"identifier": "Channel 5",
+												"value": false,
+												"access": "readWrite",
+												"type": "boolean"
+											},
+											{
+												"identifier": "Channel 6",
+												"value": false,
+												"access": "readWrite",
+												"type": "boolean"
+											},
+											{
+												"identifier": "Channel 7",
+												"value": false,
+												"access": "readWrite",
+												"type": "boolean"
+											},
+											{
+												"identifier": "On Air",
+												"value": false,
+												"access": "readWrite",
+												"type": "boolean"
+											}
+										]
+									},
+									{
+										"number": 1,
+										"isOnline": true,
+										"identifier": "Delatches",
+										"children": [
+											{
+												"identifier": "Channel 1",
+												"value": false,
+												"access": "readWrite",
+												"type": "boolean"
+											},
+											{
+												"identifier": "Channel 2",
+												"value": false,
+												"access": "none",
+												"type": "boolean"
+											},
+											{
+												"identifier": "Channel 3",
+												"value": false,
+												"access": "readWrite",
+												"type": "boolean"
+											},
+											{
+												"identifier": "Channel 4",
+												"value": false,
+												"access": "readWrite",
+												"type": "boolean"
+											},
+											{
+												"identifier": "Channel 5",
+												"value": false,
+												"access": "readWrite",
+												"type": "boolean"
+											},
+											{
+												"identifier": "Channel 6",
+												"value": false,
+												"access": "readWrite",
+												"type": "boolean"
+											},
+											{
+												"identifier": "Channel 7",
+												"value": false,
+												"access": "readWrite",
+												"type": "boolean"
+											},
+											{
+												"identifier": "On Air",
+												"value": false,
+												"access": "readWrite",
+												"type": "boolean"
+											}
+										]
+									}
+								]
+							},
+							{
+								"number": 2,
+								"isOnline": true,
+								"identifier": "Channel 3",
+								"children": [
+									{
+										"number": 0,
+										"isOnline": true,
+										"identifier": "Surpresses",
+										"children": [
+											{
+												"identifier": "Channel 1",
+												"value": false,
+												"access": "readWrite",
+												"type": "boolean"
+											},
+											{
+												"identifier": "Channel 2",
+												"value": false,
+												"access": "readWrite",
+												"type": "boolean"
+											},
+											{
+												"identifier": "Channel 3",
+												"value": false,
+												"access": "none",
+												"type": "boolean"
+											},
+											{
+												"identifier": "Channel 4",
+												"value": false,
+												"access": "readWrite",
+												"type": "boolean"
+											},
+											{
+												"identifier": "Channel 5",
+												"value": false,
+												"access": "readWrite",
+												"type": "boolean"
+											},
+											{
+												"identifier": "Channel 6",
+												"value": false,
+												"access": "readWrite",
+												"type": "boolean"
+											},
+											{
+												"identifier": "Channel 7",
+												"value": false,
+												"access": "readWrite",
+												"type": "boolean"
+											},
+											{
+												"identifier": "On Air",
+												"value": false,
+												"access": "readWrite",
+												"type": "boolean"
+											}
+										]
+									},
+									{
+										"number": 1,
+										"isOnline": true,
+										"identifier": "Delatches",
+										"children": [
+											{
+												"identifier": "Channel 1",
+												"value": false,
+												"access": "readWrite",
+												"type": "boolean"
+											},
+											{
+												"identifier": "Channel 2",
+												"value": false,
+												"access": "readWrite",
+												"type": "boolean"
+											},
+											{
+												"identifier": "Channel 3",
+												"value": false,
+												"access": "none",
+												"type": "boolean"
+											},
+											{
+												"identifier": "Channel 4",
+												"value": false,
+												"access": "readWrite",
+												"type": "boolean"
+											},
+											{
+												"identifier": "Channel 5",
+												"value": false,
+												"access": "readWrite",
+												"type": "boolean"
+											},
+											{
+												"identifier": "Channel 6",
+												"value": false,
+												"access": "readWrite",
+												"type": "boolean"
+											},
+											{
+												"identifier": "Channel 7",
+												"value": false,
+												"access": "readWrite",
+												"type": "boolean"
+											},
+											{
+												"identifier": "On Air",
+												"value": false,
+												"access": "readWrite",
+												"type": "boolean"
+											}
+										]
+									}
+								]
+							},
+							{
+								"number": 3,
+								"isOnline": true,
+								"identifier": "Channel 4",
+								"children": [
+									{
+										"number": 0,
+										"isOnline": true,
+										"identifier": "Surpresses",
+										"children": [
+											{
+												"identifier": "Channel 1",
+												"value": false,
+												"access": "readWrite",
+												"type": "boolean"
+											},
+											{
+												"identifier": "Channel 2",
+												"value": false,
+												"access": "readWrite",
+												"type": "boolean"
+											},
+											{
+												"identifier": "Channel 3",
+												"value": false,
+												"access": "readWrite",
+												"type": "boolean"
+											},
+											{
+												"identifier": "Channel 4",
+												"value": false,
+												"access": "none",
+												"type": "boolean"
+											},
+											{
+												"identifier": "Channel 5",
+												"value": false,
+												"access": "readWrite",
+												"type": "boolean"
+											},
+											{
+												"identifier": "Channel 6",
+												"value": false,
+												"access": "readWrite",
+												"type": "boolean"
+											},
+											{
+												"identifier": "Channel 7",
+												"value": false,
+												"access": "readWrite",
+												"type": "boolean"
+											},
+											{
+												"identifier": "On Air",
+												"value": false,
+												"access": "readWrite",
+												"type": "boolean"
+											}
+										]
+									},
+									{
+										"number": 1,
+										"isOnline": true,
+										"identifier": "Delatches",
+										"children": [
+											{
+												"identifier": "Channel 1",
+												"value": false,
+												"access": "readWrite",
+												"type": "boolean"
+											},
+											{
+												"identifier": "Channel 2",
+												"value": false,
+												"access": "readWrite",
+												"type": "boolean"
+											},
+											{
+												"identifier": "Channel 3",
+												"value": false,
+												"access": "readWrite",
+												"type": "boolean"
+											},
+											{
+												"identifier": "Channel 4",
+												"value": false,
+												"access": "none",
+												"type": "boolean"
+											},
+											{
+												"identifier": "Channel 5",
+												"value": false,
+												"access": "readWrite",
+												"type": "boolean"
+											},
+											{
+												"identifier": "Channel 6",
+												"value": false,
+												"access": "readWrite",
+												"type": "boolean"
+											},
+											{
+												"identifier": "Channel 7",
+												"value": false,
+												"access": "readWrite",
+												"type": "boolean"
+											},
+											{
+												"identifier": "On Air",
+												"value": false,
+												"access": "readWrite",
+												"type": "boolean"
+											}
+										]
+									}
+								]
+							},
+							{
+								"number": 4,
+								"isOnline": true,
+								"identifier": "Channel 5",
+								"children": [
+									{
+										"number": 0,
+										"isOnline": true,
+										"identifier": "Surpresses",
+										"children": [
+											{
+												"identifier": "Channel 1",
+												"value": false,
+												"access": "readWrite",
+												"type": "boolean"
+											},
+											{
+												"identifier": "Channel 2",
+												"value": false,
+												"access": "readWrite",
+												"type": "boolean"
+											},
+											{
+												"identifier": "Channel 3",
+												"value": false,
+												"access": "readWrite",
+												"type": "boolean"
+											},
+											{
+												"identifier": "Channel 4",
+												"value": false,
+												"access": "readWrite",
+												"type": "boolean"
+											},
+											{
+												"identifier": "Channel 5",
+												"value": false,
+												"access": "none",
+												"type": "boolean"
+											},
+											{
+												"identifier": "Channel 6",
+												"value": false,
+												"access": "readWrite",
+												"type": "boolean"
+											},
+											{
+												"identifier": "Channel 7",
+												"value": false,
+												"access": "readWrite",
+												"type": "boolean"
+											},
+											{
+												"identifier": "On Air",
+												"value": false,
+												"access": "readWrite",
+												"type": "boolean"
+											}
+										]
+									},
+									{
+										"number": 1,
+										"isOnline": true,
+										"identifier": "Delatches",
+										"children": [
+											{
+												"identifier": "Channel 1",
+												"value": false,
+												"access": "readWrite",
+												"type": "boolean"
+											},
+											{
+												"identifier": "Channel 2",
+												"value": false,
+												"access": "readWrite",
+												"type": "boolean"
+											},
+											{
+												"identifier": "Channel 3",
+												"value": false,
+												"access": "readWrite",
+												"type": "boolean"
+											},
+											{
+												"identifier": "Channel 4",
+												"value": false,
+												"access": "readWrite",
+												"type": "boolean"
+											},
+											{
+												"identifier": "Channel 5",
+												"value": false,
+												"access": "none",
+												"type": "boolean"
+											},
+											{
+												"identifier": "Channel 6",
+												"value": false,
+												"access": "readWrite",
+												"type": "boolean"
+											},
+											{
+												"identifier": "Channel 7",
+												"value": false,
+												"access": "readWrite",
+												"type": "boolean"
+											},
+											{
+												"identifier": "On Air",
+												"value": false,
+												"access": "readWrite",
+												"type": "boolean"
+											}
+										]
+									}
+								]
+							},
+							{
+								"number": 5,
+								"isOnline": true,
+								"identifier": "Channel 6",
+								"children": [
+									{
+										"number": 0,
+										"isOnline": true,
+										"identifier": "Surpresses",
+										"children": [
+											{
+												"identifier": "Channel 1",
+												"value": false,
+												"access": "readWrite",
+												"type": "boolean"
+											},
+											{
+												"identifier": "Channel 2",
+												"value": false,
+												"access": "readWrite",
+												"type": "boolean"
+											},
+											{
+												"identifier": "Channel 3",
+												"value": false,
+												"access": "readWrite",
+												"type": "boolean"
+											},
+											{
+												"identifier": "Channel 4",
+												"value": false,
+												"access": "readWrite",
+												"type": "boolean"
+											},
+											{
+												"identifier": "Channel 5",
+												"value": false,
+												"access": "readWrite",
+												"type": "boolean"
+											},
+											{
+												"identifier": "Channel 6",
+												"value": false,
+												"access": "none",
+												"type": "boolean"
+											},
+											{
+												"identifier": "Channel 7",
+												"value": false,
+												"access": "readWrite",
+												"type": "boolean"
+											},
+											{
+												"identifier": "On Air",
+												"value": false,
+												"access": "readWrite",
+												"type": "boolean"
+											}
+										]
+									},
+									{
+										"number": 1,
+										"isOnline": true,
+										"identifier": "Delatches",
+										"children": [
+											{
+												"identifier": "Channel 1",
+												"value": false,
+												"access": "readWrite",
+												"type": "boolean"
+											},
+											{
+												"identifier": "Channel 2",
+												"value": false,
+												"access": "readWrite",
+												"type": "boolean"
+											},
+											{
+												"identifier": "Channel 3",
+												"value": false,
+												"access": "readWrite",
+												"type": "boolean"
+											},
+											{
+												"identifier": "Channel 4",
+												"value": false,
+												"access": "readWrite",
+												"type": "boolean"
+											},
+											{
+												"identifier": "Channel 5",
+												"value": false,
+												"access": "readWrite",
+												"type": "boolean"
+											},
+											{
+												"identifier": "Channel 6",
+												"value": false,
+												"access": "none",
+												"type": "boolean"
+											},
+											{
+												"identifier": "Channel 7",
+												"value": false,
+												"access": "readWrite",
+												"type": "boolean"
+											},
+											{
+												"identifier": "On Air",
+												"value": false,
+												"access": "readWrite",
+												"type": "boolean"
+											}
+										]
+									}
+								]
+							},
+							{
+								"number": 6,
+								"isOnline": true,
+								"identifier": "Channel 7",
+								"children": [
+									{
+										"number": 0,
+										"isOnline": true,
+										"identifier": "Surpresses",
+										"children": [
+											{
+												"identifier": "Channel 1",
+												"value": false,
+												"access": "readWrite",
+												"type": "boolean"
+											},
+											{
+												"identifier": "Channel 2",
+												"value": false,
+												"access": "readWrite",
+												"type": "boolean"
+											},
+											{
+												"identifier": "Channel 3",
+												"value": false,
+												"access": "readWrite",
+												"type": "boolean"
+											},
+											{
+												"identifier": "Channel 4",
+												"value": false,
+												"access": "readWrite",
+												"type": "boolean"
+											},
+											{
+												"identifier": "Channel 5",
+												"value": false,
+												"access": "readWrite",
+												"type": "boolean"
+											},
+											{
+												"identifier": "Channel 6",
+												"value": false,
+												"access": "readWrite",
+												"type": "boolean"
+											},
+											{
+												"identifier": "Channel 7",
+												"value": false,
+												"access": "none",
+												"type": "boolean"
+											},
+											{
+												"identifier": "On Air",
+												"value": false,
+												"access": "readWrite",
+												"type": "boolean"
+											}
+										]
+									},
+									{
+										"number": 1,
+										"isOnline": true,
+										"identifier": "Delatches",
+										"children": [
+											{
+												"identifier": "Channel 1",
+												"value": false,
+												"access": "readWrite",
+												"type": "boolean"
+											},
+											{
+												"identifier": "Channel 2",
+												"value": false,
+												"access": "readWrite",
+												"type": "boolean"
+											},
+											{
+												"identifier": "Channel 3",
+												"value": false,
+												"access": "readWrite",
+												"type": "boolean"
+											},
+											{
+												"identifier": "Channel 4",
+												"value": false,
+												"access": "readWrite",
+												"type": "boolean"
+											},
+											{
+												"identifier": "Channel 5",
+												"value": false,
+												"access": "readWrite",
+												"type": "boolean"
+											},
+											{
+												"identifier": "Channel 6",
+												"value": false,
+												"access": "readWrite",
+												"type": "boolean"
+											},
+											{
+												"identifier": "Channel 7",
+												"value": false,
+												"access": "none",
+												"type": "boolean"
+											},
+											{
+												"identifier": "On Air",
+												"value": false,
+												"access": "readWrite",
+												"type": "boolean"
+											}
+										]
+									}
+								]
+							},
+							{
+								"number": 7,
+								"isOnline": true,
+								"identifier": "On Air",
+								"children": [
+									{
+										"number": 0,
+										"isOnline": true,
+										"identifier": "Surpresses",
+										"children": [
+											{
+												"identifier": "Channel 1",
+												"value": false,
+												"access": "readWrite",
+												"type": "boolean"
+											},
+											{
+												"identifier": "Channel 2",
+												"value": false,
+												"access": "readWrite",
+												"type": "boolean"
+											},
+											{
+												"identifier": "Channel 3",
+												"value": false,
+												"access": "readWrite",
+												"type": "boolean"
+											},
+											{
+												"identifier": "Channel 4",
+												"value": false,
+												"access": "readWrite",
+												"type": "boolean"
+											},
+											{
+												"identifier": "Channel 5",
+												"value": false,
+												"access": "readWrite",
+												"type": "boolean"
+											},
+											{
+												"identifier": "Channel 6",
+												"value": false,
+												"access": "readWrite",
+												"type": "boolean"
+											},
+											{
+												"identifier": "Channel 7",
+												"value": false,
+												"access": "readWrite",
+												"type": "boolean"
+											},
+											{
+												"identifier": "On Air",
+												"value": false,
+												"access": "none",
+												"type": "boolean"
+											}
+										]
+									},
+									{
+										"number": 1,
+										"isOnline": true,
+										"identifier": "Delatches",
+										"children": [
+											{
+												"identifier": "Channel 1",
+												"value": false,
+												"access": "readWrite",
+												"type": "boolean"
+											},
+											{
+												"identifier": "Channel 2",
+												"value": false,
+												"access": "readWrite",
+												"type": "boolean"
+											},
+											{
+												"identifier": "Channel 3",
+												"value": false,
+												"access": "readWrite",
+												"type": "boolean"
+											},
+											{
+												"identifier": "Channel 4",
+												"value": false,
+												"access": "readWrite",
+												"type": "boolean"
+											},
+											{
+												"identifier": "Channel 5",
+												"value": false,
+												"access": "readWrite",
+												"type": "boolean"
+											},
+											{
+												"identifier": "Channel 6",
+												"value": false,
+												"access": "readWrite",
+												"type": "boolean"
+											},
+											{
+												"identifier": "Channel 7",
+												"value": false,
+												"access": "readWrite",
+												"type": "boolean"
+											},
+											{
+												"identifier": "On Air",
+												"value": false,
+												"access": "none",
+												"type": "boolean"
+											}
+										]
+									}
+								]
+							}
+						]
+					}
+				]
+			}
+		]
+	}
+]
