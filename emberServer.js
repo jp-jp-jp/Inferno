@@ -2,7 +2,6 @@ var fs = require("fs");
 var WebSocket = require("ws");
 var ws;
 var wsconnections = {};
-var srcname = JSON.parse('{"socket": {"_peername":{"address":"0.0.0.0"}}}')
 //
 var http = require('http');
 var request = require('request');
@@ -20,14 +19,11 @@ var TreeServer = ember.TreeServer;
 var newtree = populatetree(newtree)
 const lookup = createlookup(newtree)
 var objEmberTree = TreeServer.JSONtoTree(newtree);
-var cycles = 1000 // Set this value for how many WS packets are recieved before re-checking all RestAPI variables (Inferno seems to generate about 4Hz WebSocket Send rate)
-
+var cycles = 1000 // Set this value for how many WS packets are recieved before re-checking all RestAPI variables (Unit seems to generate about 4Hz WebSocket Send rate)
 
 /////////////
 const server = new TreeServer("0.0.0.0", 9000, objEmberTree);
-//server._debug = true;
 server.listen().then(() => {
-	console.log("Ember+ Server Started at TCP 0.0.0.0:9090");
 	for (let i = 0; i < newtree[0].children.length; i++) {
 		openSocket(newtree[0].children[i].ip, i)
 	}
@@ -156,7 +152,7 @@ function openSocket(SA, id) {
 	ws.onclose = function (event) {
 	}
 	ws.onerror = function (event) {
-		console.log("WS Error: " + event.message + " for: " + SA + " with wsID: " + id);
+		console.log("WS Error for: " + SA + " with wsID: " + id);
 		setTimeout(function () {
 			openSocket(SA, id);
 		}, 10000);
@@ -165,23 +161,32 @@ function openSocket(SA, id) {
 function updatews(event, SA) {
 	ProcessRxData(event.data, function (wsdata) {
 		updatetreewithpath(SA, lookup["Mic Status"] + lookup["peak"], (300/15)*meter)
+
 		if (objEmberTree.getElementByPath(lookup[SA] + lookup["Mic Status"] + lookup["onair"]).contents.value !== onair) {
 			updatetreewithpath(SA, lookup["Mic Status"] + lookup["onair"], onair)
 		}
 		else if (objEmberTree.getElementByPath(lookup[SA]).contents.rawgain != gain) {
+			let element = objEmberTree.getElementByPath(lookup[SA])
+			element.contents.rawgain = gain
+			let res = server.getResponse(element);
+			server.updateSubscribers(element.getPath(), res);
 			sys(SA)
-			objEmberTree.getElementByPath(lookup[SA]).contents.rawgain = gain
-			if (objEmberTree.getElementByPath(lookup[SA] + lookup["Mic Status"] + lookup["micline"]).contents.value == "Line") {
-				updatetreewithpath(SA, lookup["Mic Status"] + lookup["gain"], gain - 128)
-			}
-			else if (objEmberTree.getElementByPath(lookup[SA] + lookup["Mic Status"] + lookup["micline"]).contents.value == "Mic") {
-				updatetreewithpath(SA, lookup["Mic Status"] + lookup["gain"], gain - 70)
-			}
-			else if (objEmberTree.getElementByPath(lookup[SA] + lookup["Mic Status"] + lookup["micline"]).contents.value == "Mic+48V") {
-				updatetreewithpath(SA, lookup["Mic Status"] + lookup["gain"], gain - 93)
-			}
+			updategain(SA)
 		}
 	});
+}
+function updategain(SA){
+	let element = objEmberTree.getElementByPath(lookup[SA])
+	rawgain = element.contents.rawgain
+	if (objEmberTree.getElementByPath(lookup[SA] + lookup["Mic Status"] + lookup["micline"]).contents.value == 0) {
+		updatetreewithpath(SA, lookup["Mic Status"] + lookup["gain"], rawgain - 128)
+	}
+	else if (objEmberTree.getElementByPath(lookup[SA] + lookup["Mic Status"] + lookup["micline"]).contents.value == 2) {
+		updatetreewithpath(SA, lookup["Mic Status"] + lookup["gain"], rawgain - 70)
+	}
+	else if (objEmberTree.getElementByPath(lookup[SA] + lookup["Mic Status"] + lookup["micline"]).contents.value == 1) {
+		updatetreewithpath(SA, lookup["Mic Status"] + lookup["gain"], rawgain - 93)
+	}
 }
 function updatetreewithpath(SA, path, value) {
 	let element = objEmberTree.getElementByPath(lookup[SA] + path)
@@ -258,9 +263,8 @@ function createlookup(tree) {
 	for (let i = 0; i < tree[0].children[0].children[3].children[0].children.length; i++) {
 		lookup[tree[0].children[0].children[3].children[0].children[i].identifier] = "." + i + ""
 	}
-	// Make a 'On Air = Channel 8 association
+	// Make an 'On Air' = 'Channel 8' association as the unit classes On Air as Channel 8
 	lookup["Channel 8"] = lookup["On Air"]
-	//console.log(lookup)
 	return lookup
 }
 function ProcessRxData(RxData, wsdata) {
@@ -280,11 +284,13 @@ function sys(SA) {
 		let data = '';
 		resp.on('data', (chunk) => { data += chunk; });
 		resp.on('end', () => {
-			updatetreewithpath(SA, lookup["Mic Status"] + lookup["micline"], parseInt(data.match(new RegExp("micline=(.*)"))[1]));
 			updatetreewithpath(SA, lookup["Mic Status"] + lookup["mllock"], data.match(new RegExp("mllock=(.*)"))[1]);
 			updatetreewithpath(SA, lookup["Mic Status"] + lookup["gainlock"], data.match(new RegExp("gainlock=(.*)"))[1]);
 			updatetreewithpath(SA, lookup["Mic Status"] + lookup["sidetone"], data.match(new RegExp("sidetone=(.*)"))[1].replace(/0/g, "false").replace(/1/g, "true"));;
-
+			if (objEmberTree.getElementByPath(lookup[SA] + lookup["Mic Status"] + lookup["micline"]).contents.value !== parseInt(data.match(new RegExp("micline=(.*)"))[1])){
+				updatetreewithpath(SA, lookup["Mic Status"] + lookup["micline"], parseInt(data.match(new RegExp("micline=(.*)"))[1]));
+				updategain(SA)
+			}
 		})
 	})
 };
@@ -326,7 +332,6 @@ function chan(SA, chan) {
 }
 function chaneffect(SA) {
 	http.get("http://" + SA + "/get_chneff_config.cgi?sys=eff", (resp) => {
-		let channeffect = [];
 		let data = '';
 		resp.on('data', (chunk) => { data += chunk; });
 		resp.on('end', () => {
