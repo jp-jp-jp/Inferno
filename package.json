@@ -1,0 +1,27 @@
+{
+  "name": "inferno",
+  "version": "1.0.0",
+  "description": "Requires this emberplus server [emberplus server with mods](https://github.com/jp-jp-jp/node-emberplus) due to some changes to how the server responds to value change emits",
+  "main": "emberServer.js",
+  "dependencies": {
+    "ejs": "^2.6.2",
+    "emberplus": "^1.7.22",
+    "express": "^4.17.1",
+    "node-http-ping": "^0.3.1",
+    "watchdog": "^0.8.17"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jp-jp-jp/Inferno.git"
+  },
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/jp-jp-jp/Inferno/issues"
+  },
+  "homepage": "https://github.com/jp-jp-jp/Inferno#readme"
+}

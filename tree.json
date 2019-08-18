@@ -26,9 +26,7 @@
 								"identifier": "gain",
 								"value": 0,
 								"access": "readWrite",
-								"type": "integer",
-								"minimum": -35,
-								"maximum": 15
+								"type": "integer"
 							},
 							{
 								"identifier": "onair",
